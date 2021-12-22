@@ -20,13 +20,11 @@
 	Result: <?= $payload; ?>
 	<?php
 		if ($referer) {
-			echo '<!-- ' . $referer . ' -->';
+			$sanitizeInput = filter_var($referer, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+			echo '<!--Referer: ' . $sanitizeInput . ' -->';
 		}
 	 ?>
 </h4>
-
-
-
 
 </body>
 </html>
